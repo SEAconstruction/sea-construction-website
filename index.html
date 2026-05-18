@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEA Construction Limited | Auckland Wide Building, Renovations & Custom Builds</title>
+  <meta name="description" content="SEA Construction Limited provides residential and light commercial building solutions across Auckland wide, including renovations, custom builds, remodels, repairs and upgrades." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #f5f5f5; background: #050505; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+
+    header { position: sticky; top: 0; z-index: 10; background: #ffffff; border-bottom: 1px solid #d7dde1; color: #0a0a0a; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; gap: 24px; }
+    .logo { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .logo-stack { display: flex; flex-direction: column; gap: 4px; }
+    .nav-links { display: flex; gap: 32px; font-size: 1.08rem; font-weight: 800; color: #0a0a0a; align-items: center; }
+    .nav-links a { color: #0a0a0a; padding: 8px 0; }
+    .nav-links a:hover { border-bottom: 2px solid #4f6f7f; color: #4f6f7f; }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.72)), url('images/deck-project.jpg') center/cover;
+      color: #ffffff; padding: 110px 0 95px;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; font-weight: 700; color: #b5c2c9; margin-bottom: 18px; }
+    h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 0.98; letter-spacing: -0.05em; margin-bottom: 24px; }
+    .hero p { font-size: 1.16rem; color: #e7e7e7; max-width: 650px; margin-bottom: 32px; }
+    .button-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 14px 22px; border-radius: 999px; font-weight: 800; border: 2px solid #ffffff; transition: 0.2s ease; }
+    .btn-primary { background: #4f6f7f; color: #ffffff; border-color: #4f6f7f; }
+    .btn-primary:hover { background: #5e8396; border-color: #5e8396; }
+    .btn-secondary:hover { background: #ffffff; color: #0a0a0a; }
+
+    .hero-card { border: 1px solid #333333; padding: 32px; border-radius: 24px; background: rgba(17,17,17,0.86); backdrop-filter: blur(4px); }
+    .hero-card h2 { font-size: 1.5rem; margin-bottom: 18px; }
+    .hero-card ul { list-style: none; }
+    .hero-card li { padding: 12px 0; border-bottom: 1px solid #2b2b2b; color: #eeeeee; }
+
+    section { padding: 85px 0; }
+    .section-heading { max-width: 720px; margin-bottom: 42px; }
+    .section-heading h2 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 18px; }
+    .section-heading p { color: #b5c2c9; font-size: 1.05rem; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .about-box { background: linear-gradient(180deg,#0d1215,#13191d); border: 1px solid #24313a; border-radius: 24px; padding: 32px; }
+    .about-box h3 { margin-bottom: 12px; font-size: 1.35rem; }
+    .about-box p + p { margin-top: 14px; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service-card { border: 1px solid #1f2b33; background: linear-gradient(180deg,#0c0f12,#11161a); border-radius: 22px; padding: 28px; min-height: 230px; transition: 0.2s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 35px rgba(0,0,0,0.18); }
+    .service-card span { display: inline-flex; width: 42px; height: 42px; border-radius: 50%; align-items: center; justify-content: center; background: #4f6f7f; color: #ffffff; font-weight: 800; margin-bottom: 20px; }
+    .service-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+
+    .dark-section { background: #0a0a0a; color: #ffffff; }
+    .dark-section .section-heading p { color: #d6d6d6; }
+    .safety-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .safety-item { border: 1px solid #333333; border-radius: 20px; padding: 24px; background: #111111; }
+    .safety-item h3 { margin-bottom: 10px; font-size: 1.05rem; }
+    .safety-item p { color: #d8d8d8; font-size: 0.95rem; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .gallery-card { min-height: 320px; border-radius: 24px; background: linear-gradient(135deg, #111111, #2b3f4a); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; overflow: hidden; position: relative; }
+    .gallery-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.78)); z-index: 0; }
+    .gallery-card h3, .gallery-card p { position: relative; z-index: 1; }
+    .gallery-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+    .gallery-card p { color: #e6e6e6; font-size: 0.95rem; }
+
+    .quote-box { border: 2px solid #24313a; border-radius: 30px; padding: 42px; display: grid; grid-template-columns: 1fr 0.8fr; gap: 40px; align-items: center; background: linear-gradient(180deg,#0c0f12,#11161a); }
+    .quote-box h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 18px; }
+    .contact-details { background: linear-gradient(180deg,#101417,#182028); border-radius: 22px; padding: 28px; }
+    .contact-details p { margin-bottom: 12px; }
+    .contact-details strong { display: block; color: #b5c2c9; }
+
+    footer { background: #0a0a0a; color: #ffffff; padding: 30px 0; font-size: 0.9rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 850px) {
+      .hero-grid, .split, .quote-box { grid-template-columns: 1fr; }
+      .services-grid, .safety-grid, .gallery-grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; gap: 18px; }
+      .nav-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.82rem; }
+      .hero { padding: 82px 0 72px; }
+      .logo img { max-width: 240px; height: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="logo">
+        <div class="logo-stack">
+          <img src="https://www.seaconstruction.co.nz/__static/b14e3bfc-95eb-420a-8b51-e682ea3afea3/image_desktop" alt="SEA Construction logo" style="height:120px;width:auto;" />
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#safety">Safety</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Auckland Wide • Residential & Light Commercial</p>
+          <h1>Residential and light commercial solutions with function and style.</h1>
+          <p>SEA Construction brings quality craftsmanship, creative thinking and practical building solutions to every corner of your home or commercial space — from full renovations and custom builds to clever remodels and beautifully finished upgrades.</p>
+          <div class="button-row"><a class="btn btn-primary" href="#contact">Request a Quote</a><a class="btn btn-secondary" href="#services">View Services</a></div>
+        </div>
+        <aside class="hero-card">
+          <h2>From concept to completion.</h2>
+          <ul><li>Full renovations</li><li>Custom builds</li><li>Clever remodels</li><li>Residential and light commercial spaces</li></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div class="section-heading"><h2>Building better living and working environments.</h2><p>Residential and light commercial solutions that bring function and style to every corner of your home or commercial space.</p></div>
+        <div class="about-box"><h3>About SEA Construction</h3><p>Whether it is a full renovation, a custom build, or a clever remodel, we deliver quality craftsmanship with a creative touch. From concept to completion, we work closely with homeowners and clients to transform ideas into beautifully finished spaces.</p><p>With a strong focus on innovation and efficiency, SEA Construction is your trusted partner in building better living and working environments.</p></div>
+      </div>
+    </section>
+
+    <section id="services" style="background:#07090b;">
+      <div class="container">
+        <div class="section-heading"><h2>Construction services</h2><p>Quality building solutions for homes and light commercial spaces — designed to improve function, style and everyday use.</p></div>
+        <div class="services-grid">
+          <article class="service-card"><span>01</span><h3>Custom Builds</h3><p>Tailored building solutions for new spaces, additions and project-specific requirements, delivered with quality workmanship and practical planning.</p></article>
+          <article class="service-card"><span>02</span><h3>Renovations</h3><p>Full renovation work designed to improve layout, function and finish while giving your home or commercial space a fresh new feel.</p></article>
+          <article class="service-card"><span>03</span><h3>Remodelling</h3><p>Clever remodels that make better use of existing space, improve flow and create more practical living or working environments.</p></article>
+          <article class="service-card"><span>04</span><h3>Residential Building</h3><p>Home improvements, alterations, repairs and upgrades completed with care, clear communication and attention to detail.</p></article>
+          <article class="service-card"><span>05</span><h3>Light Commercial Work</h3><p>Functional and efficient construction solutions for small commercial spaces, offices, fit-outs and property improvements.</p></article>
+          <article class="service-card"><span>06</span><h3>Repairs & Upgrades</h3><p>Building repairs, maintenance, timber work and practical upgrades that help protect and improve your property.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="safety" class="dark-section">
+      <div class="container">
+        <div class="section-heading"><h2>Health and safety comes first.</h2><p>Construction work must be done safely, especially when working at heights, around roof edges, on commercial sites or near the public.</p></div>
+        <div class="safety-grid">
+          <div class="safety-item"><h3>Site-Specific Planning</h3><p>Safety planning is matched to the site, scope of work, hazards and access requirements.</p></div>
+          <div class="safety-item"><h3>Working at Heights</h3><p>Appropriate edge protection, fall arrest or access systems are considered before work begins.</p></div>
+          <div class="safety-item"><h3>Trained Personnel</h3><p>Workers are expected to understand the task, hazards, emergency procedures and safe work method.</p></div>
+          <div class="safety-item"><h3>Clean, Controlled Sites</h3><p>We aim to keep worksites organised, tidy and controlled to reduce risk and disruption.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="background:#f2f4f5;color:#0a0a0a;">
+      <div class="container">
+        <div class="section-heading"><h2>Recent projects</h2><p style="color:#4f5d65;">Showcase recent SEA Construction work with project images pulled from your Facebook page and recent completed jobs.</p></div>
+        <div class="gallery-grid">
+          <div class="gallery-card" style="background:url('facebook-project-1.jpg') center/cover;"><h3>Residential Renovation</h3><p>Modern renovation and upgrade work completed by SEA Construction.</p></div>
+          <div class="gallery-card" style="background:url('facebook-project-2.jpg') center/cover;"><h3>Exterior & Cladding Work</h3><p>Exterior repairs, detailing and weather-facing improvements.</p></div>
+          <div class="gallery-card" style="background:url('facebook-project-3.jpg') center/cover;"><h3>Custom Building Solutions</h3><p>Creative residential and light commercial construction projects.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container quote-box">
+        <div>
+          <h2>Need reliable building work?</h2>
+          <p>Get in touch with SEA Construction Limited to discuss your renovation, custom build, remodel, repair or light commercial project. Send through your ideas, job details, photos if available, and the site address so we can understand the scope clearly.</p>
+          <div class="button-row" style="margin-top: 28px;"><a class="btn btn-primary" href="mailto:info@seaconstruction.co.nz">Email SEA Construction</a><a class="btn" style="border-color:#4f6f7f;color:#ffffff;" href="tel:+64210316301">Call Now</a></div>
+        </div>
+        <div class="contact-details">
+          <p><strong>Company</strong> SEA Construction Limited</p>
+          <p><strong>Service Area</strong> Auckland wide</p>
+          <p><strong>Email</strong> info@seaconstruction.co.nz</p>
+          <p><strong>Phone</strong> 021 031 6301</p>
+          <p><strong>Hours</strong> Monday to Friday</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-row"><p>© 2026 SEA Construction Limited. All rights reserved.</p><p>Residential • Light Commercial • Renovations • Custom Builds • Remodels</p></div></footer>
+</body>
+</html>
